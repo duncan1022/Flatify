@@ -3,24 +3,23 @@
 
 
 
-// let currentMovie
+let currentAlbum
 
 //HTML DOM Node elements
 const albumList = document.querySelector("#album-list")
-const albumDetailImage = document.querySelector("div#album-info img#detail-image")
-const albumDetailTitle = document.querySelector("div#album-info h1#title")
-const albumDetailYear = document.querySelector("div#album-info h3#year-released")
-const albumDetailDescription = document.querySelector("div#album-info p#description")
+const albumDetailImage = document.querySelector("#detail-image")
+const albumDetailTitle = document.querySelector("#title")
+const albumDetailYear = document.querySelector("#year")
+const albumDetailArtist = document.querySelector("#artist")
 
 
 
 
 // FETCH //GET 
 function getAlbums() {
-    fetch("http://localhost:3000/")
+    fetch("http://localhost:3000/albums")
         .then(response => response.json())
         .then( albumArr => {
-        
             albumArr.map( eachAlbum => {
                 createImageMenu(eachAlbum)
             })
@@ -46,9 +45,9 @@ const renderAlbumDetail = (album) => {
     currentAlbum = album
 
     albumDetailImage.src = album.image 
-    albumDetailTitle.innerText = album.title
-    albumDetailYear.innerText = album.release_year
-    albumDetailDescription.innerText = album.description
+    albumDetailTitle.textContent = album.title
+    albumDetailYear.textContent = album.year
+    albumDetailArtist.textContent = album.artist
 }
 
 // //function invocation

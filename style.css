@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: #0BCCF5;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#right-side {
+    margin-left:auto;
+}
+
+.logo {
+    margin: 20px 0px 20px 0px;
+}
+
+#album-list {
+    display:flex;
+    justify-content: center;
+}
+
+#album-list img {
+    width: 100px;
+    height: auto;
+    margin: 7px;
+}
+
+#album-list img:hover {
+    filter: drop-shadow(0 0 0.75rem white);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+#album-info {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#album-info img {
+    height: auto;
+    margin: 7px;
+    filter: drop-shadow(0 0 1em #0BCCF5)
+}
+
+#album-info div {
+    width: 500px;
+    margin-left: 20px;
+}
+
+
