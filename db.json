@@ -1,0 +1,41 @@
+{
+
+"albums":[
+    {
+        "id":1,
+        "name": "The Melodic Blue",
+        "image": ""  ,
+        "year-Released": "2021",
+        "artist": "Baby Keem",
+    }
+    {
+        "id":2,
+        "name": "The Miseducation of Lauryn Hill",
+        "image":  "" ,
+        "year-Released": "1998",
+        "artist":  "Lauryn Hill",
+    }
+    {
+        "id":3,
+        "name": "Riot! ",
+        "image":  "" ,
+        "year-Released": "2007",
+        "artist": "Paramore",
+    }
+    {
+        "id":4,
+        "name": "Give or Take",
+        "image":  "" ,
+        "year-Released": "2022",
+        "artist": "Giveon",
+    }
+    {
+        "id":5,
+        "name": "Ctrl",
+        "image": ""  ,
+        "year-Released": "2017",
+        "artist": "Sza",
+    }
+
+]
+}
