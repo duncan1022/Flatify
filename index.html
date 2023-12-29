@@ -14,20 +14,32 @@
     <nav id="album-list">
             
     </nav>
+    <input type="text" id="search-input" placeholder="Search for an album">
+    <button class="search-button" type="submit">Search</button>
       <div id="album-info">
         <img id="detail-image" src="" alt="Album cover images">
         <div>
           <h3>Album Title:</h3>
-          <h3 id="title">Album Title</h3> <br>
-          <h3>Artist:</p>
-            <h3 id="artist">Artist</h3><br>
+          <p id="title">Album Title</p> <br>
+          <h3>Artist:</h3>
+          <p id="artist">Artist</p> <br>
           <h3>Year Released:</h3>
-          <h3 id="year">Year Released</h3> 
+          <p id="year">Year Released</p>
          
         </div>
     </div>
-  
-
-
+    <h3>Reviews</h3>
+    <ul id="reviews-list" class="reviews"></ul>
+    
+    <form id="review-form" class="review-form">
+      <input
+        class="review-input"
+        type="text"
+        name="review"
+        id="review"
+        placeholder="Review Me!!!">
+      <button class="review-button" type="submit">Post</button>
+    </form>
+    
   </body>
 </html>
