@@ -1,11 +1,7 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
 body {
-    background-image: linear-gradient(black, #0BCCF5, whitesmoke);
-    color: black;
+    background-image: linear-gradient(whitesmoke, #0BCCF5, black);
+    color: whitesmoke;
 }
 #right-side {
     margin-left: auto;
@@ -28,7 +24,7 @@ body {
 }
 
 #album-list img:hover {
-    filter: drop-shadow(0 0 0.75rem whitesmoke);
+    filter: drop-shadow(0 0 0.75rem black);
     transform: scale(1.1);
     transition: 0.5s;
 }
@@ -43,9 +39,8 @@ body {
 #album-info img {
     height: auto;
     margin: 7px;
-    border-style: outset;
-    filter: drop-shadow(0 0 1em whitesmoke );
-    
+    filter: drop-shadow(0 0 1em whitesmoke);
+   
 }
 
 #album-info div {
@@ -73,7 +68,7 @@ body {
 
 .search-button:hover {
     background-color: #09699B;
-    color: white;
+    color: whitesmoke;
 }
 
 #reviews-list {
@@ -108,12 +103,12 @@ body {
 
 .review-button:hover {
     background-color: #09699B;
-    color: white;
+    color: whitesmoke;
 }
 
 .delete-button {
     background-color: #0BCCF5; 
-    color: #ffffff; 
+    color: whitesmoke; 
     border: none; 
     padding: 5px 10px; 
     cursor: pointer; 
@@ -121,5 +116,12 @@ body {
 }
 .delete-button:hover {
     background-color: #09699B;
-    color: white;
+    color: whitesmoke;
 }
+#footer{ 
+    color: #0BCCF5;
+    float:left; 
+    padding: 50px;
+    text-align:center;
+    width: 75%;
+  }
