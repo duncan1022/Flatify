@@ -1,2 +1,2 @@
 # Flatify
-# wackybaccy
+# Flatify
