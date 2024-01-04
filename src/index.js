@@ -1,13 +1,12 @@
 
-let currentAlbum
-
 const albumList = document.querySelector("#album-list")
 const albumImage = document.querySelector("#detail-image")
 const albumTitle = document.querySelector("#title")
 const albumYear = document.querySelector("#year")
 const albumArtist = document.querySelector("#artist")
-
 const reviewsList = document.querySelector('#reviews-list')
+const likeButton = document.querySelector('.btn')
+let currentAlbum
 
 fetch("http://localhost:3000/albums")
     .then(response => response.json())
@@ -17,11 +16,8 @@ fetch("http://localhost:3000/albums")
         })
 
         displayAlbumDetail(albumData[0])
-
         makeNewReview()
-
     })
-
 
 function createImageMenu(album) {
     const image = document.createElement("img")
@@ -71,12 +67,11 @@ function makeNewReview() {
         deleteButton.textContent = 'Delete'
         deleteButton.classList.add('delete-button')
         deleteButton.addEventListener('click', () => {
-           newReview.remove()
-        });
-        
-        newReview.appendChild(deleteButton)
+            newReview.remove()
+        })
 
         newReview.appendChild(deleteButton)
+
         addNewReview(newReview)
 
         reviewForm.reset()
@@ -87,3 +82,12 @@ function addNewReview(newReview) {
     reviewsList.appendChild(newReview)
 }
 
+function toggle(){
+    likeButton.addEventListener('click', toggle)
+    if (likeButton.style.color =="red"){
+        likeButton.style.color ="gray"
+    }
+    else{
+        likeButton.style.color ="red"
+    }
+}

@@ -22,12 +22,7 @@
           <p id="artist">Artist</p> <br>
           <h3>Year Released:</h3>
           <p id="year">Year Released</p>
-         
-        </div>
-    </div>
-    <h3>Reviews</h3>
     <ul id="reviews-list" class="reviews"></ul>
-    
     <form id="review-form" class="review-form">
       <input
         class="review-input"
@@ -36,11 +31,21 @@
         id="review"
         placeholder="Review Me!!!">
       <button class="review-button" type="submit">Post</button>
+      <div class="like-button">
+        <button onclick = "toggle()" id="like" class="btn"><i class="fa-solid fa-heart"></i></button>
+      </div>
     </form>
-    <section id ="footer">
-       <div>
-         <h3>Creators</h3>
-         </div>
-     </section>
+  <form id="newAlbum">
+    <h4>Add Your Favorite Album</h4>
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="new-title" />
+    <label for="artist">Artist: </label>
+    <input type="text" name="artist" id="new-artist" />
+    <label for="image">Image: </label>
+    <input type="text" name="image" id="new-image" />
+    <label for="year">Year: </label>
+    <input type="text" name="year" id="new-year" />
+    <input type="submit" value="Add" />
+  </form>
   </body>
 </html>

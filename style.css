@@ -47,18 +47,28 @@ body {
     width: 500px;
     margin-left: 20px;
 }
-
-#reviews-list {
+  #reviews-list {
     list-style-type: none;
-    padding: 0;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 #reviews-list li {
     margin-bottom: 10px;
+    color: whitesmoke; 
 }
 
 #review-form {
     margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .review-input {
@@ -95,10 +105,57 @@ body {
     background-color: #09699B;
     color: whitesmoke;
 }
-#footer{ 
-    color: #0BCCF5;
-    float:left; 
-    padding: 50px;
-    text-align:center;
+.like-button{
+    position: fixed;
+    right: 20px; 
+    bottom: 20px; 
+    z-index: 999; 
+}
+.btn{
+    background: transparent;
+    border: none;
+    margin: 87px;
+    font-size: 88px;
+    outline: none;
+    color: gray;
+}
+#newAlbum {
+    margin-top: 0px;
+    margin-left: 500px;
+    width: 400px;
+    margin-right: 20px; 
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    color: whitesmoke;
+    z-index: 999; 
+}
+
+#newAlbum h4 {
+    text-align: center;
+}
+
+#newAlbum label {
+    display: block;
+    margin: 10px
+}
+
+#newAlbum input {
     width: 75%;
-  }
+    padding: 5px;
+    margin-bottom: 10px;
+    
+}
+
+#newAlbum input[type="submit"] {
+    background-color: #0BCCF5;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#newAlbum input[type="submit"]:hover {
+    background-color: #09699B;
+    color: whitesmoke;
+}
