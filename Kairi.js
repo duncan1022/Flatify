@@ -89,22 +89,37 @@ function addNewReview(newReview) {
     reviewsList.appendChild(newReview)
 }
 
-function handleLikeButtonClick() {
-      alert ('Happy you liked it!');
-}
-let likeButton = document.createElement('button');
-likeButton.innerHTML = 'like';
-likeButton.addEventListener('click', handleLike)
+document.querySelectorAll(".album-info").forEach(album => {
+	const albumId = album.dataset.albumId;
+	const ratings = album.querySelectorAll(".like-rating");
+	const likeRating = ratings[0];
 
-const likeSection = document.getElementById('like-section');
- // update the like count on the webpage
-
- document.getElementById("likeCount").innerHTML = likeCount;
+	ratings.forEach(rating => {
+		const button = rating.querySelector(".like-countU-button material-icons" , ".like-countD-button material-icons$");
+		const count = rating.querySelector(".like-rating-count");
         
- let likeCount = 0;
+        button.addEventListener("click", async () => {
+                if (rating.albumList.contains("like-rating-selected")) {
+                    const count = rating.querySelector(".like-rating-count")
+                    rating.albumList.remove("like-rating-selected")
+                return;
+                }
+                count.textContent = Number(count.textContent) + 1;
+                
+                ratings.forEach(rating => {
+                    if (rating.albumList.contains("like-rating-selected")) {
+                        const countD = rating.querySelector(".like-rating-count");
+                        const countU = rating.querySelector(",like-rating-count")
 
- likeCount++;
+                        count.textContent = Math.max(0, Number(count.textContent) - 1);
+                        rating.albumList.remove("like-rating-selected");
+                }
+            });
+            rating.albumList.add("like-rating-selected"); 
 
- // display a message in the console to indicate that the button was clicked
-  console.log("Like button clicked!");
-        
+            const likeOrDislike = likeRating === rating ? "like" : "dislike";
+            const response = await fetch(`/.album-info/${albumId}/${likeOrDislike}`);
+            const body = await response.json();
+        });
+    });
+ });

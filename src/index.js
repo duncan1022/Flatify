@@ -96,7 +96,7 @@ document.querySelectorAll(".album-info").forEach(album => {
 	const likeRating = ratings[0];
 
 	ratings.forEach(rating => {
-		const button = rating.querySelector(".like-countU-button material-icons" , ".like-countD-button material-icons");
+		const button = rating.querySelector(".like-countU-button material-icons" , ".like-countD-button material-icons$");
 		const count = rating.querySelector(".like-rating-count");
         
         button.addEventListener("click", async () => {
