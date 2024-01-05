@@ -14,6 +14,36 @@ body {
   margin-left: auto;
 }
 
+#search {
+  display: flex;
+  width: 500px;
+  margin: 30px auto;
+  height: 40px;
+  border: #333 solid;
+  border-radius: 20px;
+}
+#search-text {
+  margin-right: 0;
+  border: none;
+  width: 400px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+#search-album {
+  margin-left: 0;
+  border: none;
+  width: 100px;
+  text-align: center;
+  color: #333;
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: darkgray;
+  font-size: 16px;
+  font-style: bold;
+}
+
 .logo {
   margin: 20px 0px 20px 0px;
 }
