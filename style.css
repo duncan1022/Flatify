@@ -21,13 +21,24 @@ body {
 #album-list {
   display: flex;
   justify-content: center;
+  overflow-x: scroll;
+  scrollbar-width: 0px;
+
+  white-space: nowrap;
+}
+#album-list::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
+#album-list:nth-child(1) {
+  margin-left: 20px;
+}
 #album-list img {
-  width: 100px;
+  width: 200px;
   height: auto;
-  margin: 7px;
+  margin: 20px;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
 #review-container {
   width: 400px;
@@ -42,7 +53,7 @@ body {
 
 #album-info {
   display: flex;
-  height: 400px;
+  height: 500px;
   justify-content: center;
   margin: auto;
   width: 500px;
@@ -52,13 +63,18 @@ body {
   height: auto;
   margin: 7px;
   filter: drop-shadow(0 0 1em whitesmoke);
+  border-radius: 0.5rem;
 }
 
-#album-info div {
-  width: 300px;
+#album-details {
+  width: 400px;
   margin-left: 5px;
   margin-top: 20px;
   justify-content: center;
+}
+
+#album-details > h3 {
+  width: 100%;
 }
 
 #reviews-list {
