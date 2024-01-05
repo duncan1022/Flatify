@@ -102,7 +102,7 @@ function hanldeSearch(e) {
     .then((res) => res.json())
     .then((data) =>
       data.forEach((artist) => {
-        newArray = hanldeFilter(artist.artist.toLowerCase())
+        hanldeFilter(artist.artist.toLowerCase())
           ? (createImageMenu(artist), newArray.push(artist.artist))
           : ''
       }),
