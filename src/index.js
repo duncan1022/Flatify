@@ -1,93 +1,113 @@
 
-const albumList = document.querySelector("#album-list")
-const albumImage = document.querySelector("#detail-image")
-const albumTitle = document.querySelector("#title")
-const albumYear = document.querySelector("#year")
-const albumArtist = document.querySelector("#artist")
-const reviewsList = document.querySelector('#reviews-list')
-const likeButton = document.querySelector('.btn')
 let currentAlbum
+const url = 'http://localhost:3000/albums'
+const albumList = document.querySelector('#album-list')
+const albumImage = document.querySelector('#detail-image')
+const albumTitle = document.querySelector('#title')
+const albumYear = document.querySelector('#year')
+const albumArtist = document.querySelector('#artist')
 
-fetch("http://localhost:3000/albums")
-    .then(response => response.json())
-    .then(albumData => {
-        albumData.map(eachAlbum => {
-            createImageMenu(eachAlbum)
-        })
+const reviewsList = document.querySelector('#reviews-list')
 
-        displayAlbumDetail(albumData[0])
-        makeNewReview()
+const search = document.querySelector('#search')
+const searchText = document.querySelector('#search-text')
+const searchBtn = document.querySelector('#search-album')
+
+fetch(url)
+  .then((response) => response.json())
+  .then((albumData) => {
+    albumData.map((eachAlbum) => {
+      createImageMenu(eachAlbum)
     })
 
-function createImageMenu(album) {
-    const image = document.createElement("img")
-    image.src = album.image
-    albumList.appendChild(image)
+    displayAlbumDetail(albumData[0])
 
-    image.addEventListener("click", () => {
-        displayAlbumDetail(album)
-    });
+    makeNewReview()
+  })
+
+function createImageMenu(album) {
+  const image = document.createElement('img')
+  image.src = album.image
+  albumList.appendChild(image)
+
+  image.addEventListener('click', () => {
+    displayAlbumDetail(album)
+  })
 }
 
 const displayAlbumDetail = (album) => {
-    currentAlbum = album
+  currentAlbum = album
+  console.log(album.image)
+  albumImage.src = album.image
+  albumTitle.textContent = album.title
+  albumYear.textContent = album.year
+  albumArtist.textContent = album.artist
 
-    albumImage.src = album.image
-    albumTitle.textContent = album.title
-    albumYear.textContent = album.year
-    albumArtist.textContent = album.artist
-
-    if (album.reviews && album.reviews.length > 0) {
-        displayReviews(album.reviews)
-    } else {
-        reviewsList.innerHTML = ''
-    }
+  if (album.reviews && album.reviews.length > 0) {
+    displayReviews(album.reviews)
+  } else {
+    reviewsList.innerHTML = ''
+  }
 }
 
 function displayReviews(reviews) {
-    reviews.forEach(getReview)
+  reviews.forEach(getReview)
 }
 
 function getReview(review) {
-    const list = document.createElement('ul')
-    list.textContent = review.content
-    reviewsList.appendChild(list)
+  const list = document.createElement('ul')
+  list.textContent = review.content
+  reviewsList.appendChild(list)
 }
 
 function makeNewReview() {
-    document.querySelector('#review-form').addEventListener("submit", (event) => {
-        event.preventDefault()
-        const reviewForm = event.target
+  document.querySelector('#review-form').addEventListener('submit', (event) => {
+    event.preventDefault()
+    const reviewForm = event.target
 
-        const newReviewDescription = document.querySelector('#review')
-        const newReview = document.createElement('ul')
-        newReview.textContent = newReviewDescription.value
+    const newReviewDescription = document.querySelector('#review')
+    const newReview = document.createElement('ul')
+    newReview.textContent = newReviewDescription.value
 
-        const deleteButton = document.createElement('button')
-        deleteButton.textContent = 'Delete'
-        deleteButton.classList.add('delete-button')
-        deleteButton.addEventListener('click', () => {
-            newReview.remove()
-        })
+    const deleteButton = document.createElement('button')
+    deleteButton.textContent = 'Delete'
+    deleteButton.classList.add('delete-button')
+    deleteButton.addEventListener('click', () => {
+      newReview.remove()
+    })
 
-        newReview.appendChild(deleteButton)
+    newReview.appendChild(deleteButton)
 
-        addNewReview(newReview)
+    newReview.appendChild(deleteButton)
+    addNewReview(newReview)
 
-        reviewForm.reset()
-    });
+    reviewForm.reset()
+  })
 }
 
 function addNewReview(newReview) {
-    reviewsList.appendChild(newReview)
+  reviewsList.appendChild(newReview)
 }
 
-function toggle(){
-    likeButton.addEventListener('click', toggle)
-    if (likeButton.style.color =="red"){
-        likeButton.style.color ="gray"
-    }
-    else{
-        likeButton.style.color ="red"
-    }
+searchText.addEventListener('input', (e) => handleInput(e))
+
+search.addEventListener('submit', (e) => hanldeSearch(e))
+let input = ''
+function handleInput(e) {
+  input = e.target.value
+}
+function hanldeSearch(e) {
+  e.preventDefault()
+  albumList.innerHTML = ''
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) =>
+      data.forEach((artist) => {
+        hanldeFilter(artist.artist) ? createImageMenu(artist) : ''
+      }),
+    )
+}
+
+function hanldeFilter(arr) {
+  return arr.includes(`${input}`)
 }

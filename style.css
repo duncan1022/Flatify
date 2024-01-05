@@ -1,161 +1,163 @@
-
-body {
-    background-image: linear-gradient(whitesmoke, #0BCCF5, black);
+* {
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-image: linear-gradient(whitesmoke, #0bccf5, black);
     color: whitesmoke;
-}
-#right-side {
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+  }
+  #right-side {
     margin-left: auto;
-}
-
-.logo {
+  }
+  
+  #search {
+    display: flex;
+    width: 500px;
+    margin: 30px auto;
+    height: 40px;
+    border: #333 solid;
+    border-radius: 20px;
+  }
+  #search-text {
+    margin-right: 0;
+    border: none;
+    width: 400px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  #search-album {
+    margin-left: 0;
+    border: none;
+    width: 100px;
+    text-align: center;
+    color: #333;
+    cursor: pointer;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: darkgray;
+    font-size: 16px;
+    font-style: bold;
+  }
+  
+  .logo {
     margin: 20px 0px 20px 0px;
-}
-
-#album-list {
+  }
+  
+  #album-list {
     display: flex;
     justify-content: center;
-}
-
-#album-list img {
-    width: 100px;
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+  
+    white-space: nowrap;
+  }
+  #album-list::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+  
+  #album-list:nth-child(1) {
+    margin-left: 20px;
+  }
+  #album-list img {
+    width: 200px;
     height: auto;
-    margin: 7px;
-    cursor: pointer; 
-}
-
-#album-list img:hover {
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+  #review-container {
+    width: 400px;
+    margin: auto;
+  }
+  
+  #album-list img:hover {
     filter: drop-shadow(0 0 0.75rem black);
     transform: scale(1.1);
     transition: 0.5s;
-}
-
-#album-info {
+  }
+  
+  #album-info {
     display: flex;
-    height: 400px;
+    height: 500px;
     justify-content: center;
-    margin-top: 25px;
-}
-
-#album-info img {
+    margin: auto;
+    width: 500px;
+  }
+  
+  #album-info img {
     height: auto;
     margin: 7px;
     filter: drop-shadow(0 0 1em whitesmoke);
-   
-}
-
-#album-info div {
-    width: 500px;
-    margin-left: 20px;
-}
+    border-radius: 0.5rem;
+  }
+  
+  #album-details {
+    width: 400px;
+    margin-left: 5px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  #album-details > h3 {
+    width: 100%;
+  }
+  
   #reviews-list {
     list-style-type: none;
-    padding: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%; 
-    background-color: rgba(0, 0, 0, 0.8); 
-}
-
-#reviews-list li {
+    padding: 0;
+  }
+  
+  #reviews-list li {
     margin-bottom: 10px;
-    color: whitesmoke; 
-}
-
-#review-form {
+  }
+  
+  #review-form {
     margin-top: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%; 
-    background-color: rgba(0, 0, 0, 0.8); 
-}
-
-.review-input {
+  }
+  
+  .review-input {
     padding: 5px;
     width: 300px;
     font-size: 16px;
-}
-
-.review-button {
+  }
+  
+  .review-button {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #0BCCF5;
+    background-color: #0bccf5;
     color: black;
     border: none;
     border-radius: 4px;
     margin-left: 10px;
-}
-
-.review-button:hover {
-    background-color: #09699B;
+  }
+  
+  .review-button:hover {
+    background-color: #09699b;
     color: whitesmoke;
-}
-
-.delete-button {
-    background-color: #0BCCF5; 
-    color: whitesmoke; 
-    border: none; 
-    padding: 5px 10px; 
-    cursor: pointer; 
-    margin-left: 10px; 
-}
-.delete-button:hover {
-    background-color: #09699B;
+  }
+  
+  .delete-button {
+    background-color: #0bccf5;
     color: whitesmoke;
-}
-.like-button{
-    position: fixed;
-    right: 20px; 
-    bottom: 20px; 
-    z-index: 999; 
-}
-.btn{
-    background: transparent;
     border: none;
-    margin: 87px;
-    font-size: 88px;
-    outline: none;
-    color: gray;
-}
-#newAlbum {
-    margin-top: 0px;
-    margin-left: 500px;
-    width: 400px;
-    margin-right: 20px; 
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 5px;
-    color: whitesmoke;
-    z-index: 999; 
-}
-
-#newAlbum h4 {
-    text-align: center;
-}
-
-#newAlbum label {
-    display: block;
-    margin: 10px
-}
-
-#newAlbum input {
-    width: 75%;
-    padding: 5px;
-    margin-bottom: 10px;
-    
-}
-
-#newAlbum input[type="submit"] {
-    background-color: #0BCCF5;
-    color: black;
-    border: none;
-    border-radius: 4px;
     padding: 5px 10px;
     cursor: pointer;
-}
-
-#newAlbum input[type="submit"]:hover {
-    background-color: #09699B;
+    margin-left: 10px;
+  }
+  .delete-button:hover {
+    background-color: #09699b;
     color: whitesmoke;
-}
+  }
+  #footer {
+    color: #0bccf5;
+    float: left;
+    padding: 50px;
+    text-align: center;
+    width: 75%;
+  }
