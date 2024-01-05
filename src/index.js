@@ -1,4 +1,3 @@
-
 let currentAlbum
 const url = 'http://localhost:3000/albums'
 const albumList = document.querySelector('#album-list')
@@ -110,4 +109,8 @@ function hanldeSearch(e) {
 
 function hanldeFilter(arr) {
   return arr.includes(`${input}`)
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Thomas
