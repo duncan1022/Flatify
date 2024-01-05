@@ -1,0 +1,41 @@
+{
+
+    "albums":[
+        {
+            "id":1,
+            "title": "The Melodic Blue",
+            "image": "https://i1.wp.com/lighthouse.lyndhurstschools.net/wp-content/uploads/2021/12/melodic-blue-1-e1640655365325.jpg?fit=600%2C600&ssl=1"  ,
+            "year": "2021",
+            "artist": "Baby Keem"
+        },
+        {
+            "id":2,
+            "title": "The Miseducation of Lauryn Hill",
+            "image":  "https://i0.wp.com/www.grimygoods.com/wp-content/uploads/2023/08/the-miseducation-of-lauryn-hill-album-art.jpg?fit=624%2C597&ssl=1" ,
+            "year": "1998",
+            "artist":  "Lauryn Hill"
+        },
+        {
+            "id":3,
+            "title": "Riot! ",
+            "image":  "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb" ,
+            "year": "2007",
+            "artist": "Paramore"
+        },
+        {
+            "id":4,
+            "title": "Give or Take",
+            "image":  "https://lostposters.com/wp-content/uploads/2023/06/Album-Giveon-Give-Or-Take_1.jpg" ,
+            "year": "2022",
+            "artist": "Giveon"
+        },
+        {
+            "id":5,
+            "title": "Ctrl",
+            "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/91AbZ7RgrEL._UF894,1000_QL80_.jpg"  ,
+            "year": "2017",
+            "artist": "Sza"
+        }
+    
+    ]
+    }
