@@ -39,7 +39,7 @@ body {
   cursor: pointer;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: darkgray;
+  background-color: rgb(224, 223, 223);
   font-size: 16px;
   font-style: bold;
 }
@@ -54,14 +54,14 @@ body {
   overflow-x: scroll;
   scrollbar-width: 0px;
 
-  white-space: nowrap;
+  white-space: nowrap; /*Scroll*/
 }
 #album-list::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
 #album-list:nth-child(1) {
-  margin-left: 20px;
+  margin-left: 100px;
 }
 #album-list img {
   width: 200px;
