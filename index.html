@@ -1,46 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width" >
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Flatify</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <script defer src="src/index.js"></script>
   </head>
   <body>
     <div id="header">
       <!-- <img class="logo" src="" >  -->
-  </div>
-    <nav id="album-list">  
-    </nav> 
-      <div id="album-info">
-        <img id="detail-image" src="" alt="Album cover images">
-        <div>
-          <h3>Album Title:</h3>
-          <p id="title">Album Title</p> <br>
-          <h3>Artist:</h3>
-          <p id="artist">Artist</p> <br>
-          <h3>Year Released:</h3>
-          <p id="year">Year Released</p>
-         
-        </div>
     </div>
-    <h3>Reviews</h3>
-    <ul id="reviews-list" class="reviews"></ul>
-    
-    <form id="review-form" class="review-form">
-      <input
-        class="review-input"
-        type="text"
-        name="review"
-        id="review"
-        placeholder="Review Me!!!">
-      <button class="review-button" type="submit">Post</button>
-    </form>
-    <section id ="footer">
-       <div>
-         <h3>Creators</h3>
-         </div>
-     </section>
+    <nav id="album-list"></nav>
+    <div id="album-info">
+      <img id="detail-image" src="" alt="Album cover images" />
+      <div>
+        <h3>Album Title:</h3>
+        <p id="title">Album Title</p>
+        <br />
+        <h3>Artist:</h3>
+        <p id="artist">Artist</p>
+        <br />
+        <h3>Year Released:</h3>
+        <p id="year">Year Released</p>
+      </div>
+    </div>
+    <div id="review-container">
+      <h3>Reviews</h3>
+      <ul id="reviews-list" class="reviews"></ul>
+      <form id="review-form" class="review-form">
+        <input
+          class="review-input"
+          type="text"
+          name="review"
+          id="review"
+          placeholder="Review Me!!!"
+        />
+        <button class="review-button" type="submit">Post</button>
+      </form>
+    </div>
+
+    <section id="footer">
+      <div>
+        <h3>Creators</h3>
+      </div>
+    </section>
   </body>
 </html>

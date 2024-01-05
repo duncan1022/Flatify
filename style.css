@@ -1,104 +1,112 @@
-
+* {
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+}
 body {
-    background-image: linear-gradient(whitesmoke, #0BCCF5, black);
-    color: whitesmoke;
+  background-image: linear-gradient(whitesmoke, #0bccf5, black);
+  color: whitesmoke;
 }
 #right-side {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .logo {
-    margin: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 #album-list {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #album-list img {
-    width: 100px;
-    height: auto;
-    margin: 7px;
-    cursor: pointer; 
+  width: 100px;
+  height: auto;
+  margin: 7px;
+  cursor: pointer;
+}
+#review-container {
+  border: #333;
+  width: 400px;
+  margin: auto;
 }
 
 #album-list img:hover {
-    filter: drop-shadow(0 0 0.75rem black);
-    transform: scale(1.1);
-    transition: 0.5s;
+  filter: drop-shadow(0 0 0.75rem black);
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 #album-info {
-    display: flex;
-    height: 400px;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  height: 400px;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 #album-info img {
-    height: auto;
-    margin: 7px;
-    filter: drop-shadow(0 0 1em whitesmoke);
-   
+  height: auto;
+  margin: 7px;
+  filter: drop-shadow(0 0 1em whitesmoke);
 }
 
 #album-info div {
-    width: 500px;
-    margin-left: 20px;
+  width: 500px;
+  margin-left: 20px;
 }
 
 #reviews-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 #reviews-list li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #review-form {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .review-input {
-    padding: 5px;
-    width: 300px;
-    font-size: 16px;
+  padding: 5px;
+  width: 300px;
+  font-size: 16px;
 }
 
 .review-button {
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #0BCCF5;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0bccf5;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
 }
 
 .review-button:hover {
-    background-color: #09699B;
-    color: whitesmoke;
+  background-color: #09699b;
+  color: whitesmoke;
 }
 
 .delete-button {
-    background-color: #0BCCF5; 
-    color: whitesmoke; 
-    border: none; 
-    padding: 5px 10px; 
-    cursor: pointer; 
-    margin-left: 10px; 
+  background-color: #0bccf5;
+  color: whitesmoke;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 .delete-button:hover {
-    background-color: #09699B;
-    color: whitesmoke;
+  background-color: #09699b;
+  color: whitesmoke;
 }
-#footer{ 
-    color: #0BCCF5;
-    float:left; 
-    padding: 50px;
-    text-align:center;
-    width: 75%;
-  }
+#footer {
+  color: #0bccf5;
+  float: left;
+  padding: 50px;
+  text-align: center;
+  width: 75%;
+}
