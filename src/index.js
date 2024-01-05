@@ -36,7 +36,6 @@ function createImageMenu(album) {
 
 const displayAlbumDetail = (album) => {
   currentAlbum = album
-  console.log(album.image)
   albumImage.src = album.image
   albumTitle.textContent = album.title
   albumYear.textContent = album.year
@@ -93,16 +92,19 @@ searchText.addEventListener('input', (e) => handleInput(e))
 search.addEventListener('submit', (e) => hanldeSearch(e))
 let input = ''
 function handleInput(e) {
-  input = e.target.value
+  input = e.target.value.toLowerCase()
 }
 function hanldeSearch(e) {
   e.preventDefault()
+  let newArray = []
   albumList.innerHTML = ''
-  fetch(url)
+  return fetch(url)
     .then((res) => res.json())
     .then((data) =>
       data.forEach((artist) => {
-        hanldeFilter(artist.artist) ? createImageMenu(artist) : ''
+        newArray = hanldeFilter(artist.artist.toLowerCase())
+          ? (createImageMenu(artist), newArray.push(artist.artist))
+          : ''
       }),
     )
 }
