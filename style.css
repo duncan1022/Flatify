@@ -154,10 +154,40 @@
     background-color: #09699b;
     color: whitesmoke;
   }
-  #footer {
-    color: #0bccf5;
-    float: left;
-    padding: 50px;
-    text-align: center;
-    width: 75%;
-  }
+  .like-rating-container {
+    display: flex;
+    justify-content: middle;
+    padding: 12px 0px;
+}
+
+.like-rating {
+    display: flex;
+    align-items:center;
+    cursor: defualt;
+}
+
+
+.like-rating-selected > .like-countU-button,
+.like-rating-selected > .like-rating-count {
+    color: #0abac3;
+}
+
+.like-rating-selected > .like-countD-button,
+.like-rating-selected > .like-rating-count {
+    color: #0abac3;
+}
+
+.like-rating:not(:last-child){
+    margin-right: 12px;
+}
+
+.like-count-button {
+	margin-right: 6px;
+	cursor: pointer;
+	color: #1429c7;
+}
+
+
+.like-rating:not(.like-rating-selected) > .like-count-button:hover {
+    color: #000000
+}
