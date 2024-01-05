@@ -36,7 +36,6 @@ function createImageMenu(album) {
 
 const displayAlbumDetail = (album) => {
   currentAlbum = album
-  console.log(album.image)
   albumImage.src = album.image
   albumTitle.textContent = album.title
   albumYear.textContent = album.year
@@ -93,24 +92,57 @@ searchText.addEventListener('input', (e) => handleInput(e))
 search.addEventListener('submit', (e) => hanldeSearch(e))
 let input = ''
 function handleInput(e) {
-  input = e.target.value
+  input = e.target.value.toLowerCase()
 }
 function hanldeSearch(e) {
   e.preventDefault()
+  let newArray = []
   albumList.innerHTML = ''
-  fetch(url)
+  return fetch(url)
     .then((res) => res.json())
     .then((data) =>
       data.forEach((artist) => {
-        hanldeFilter(artist.artist) ? createImageMenu(artist) : ''
+        hanldeFilter(artist.artist.toLowerCase())
+          ? (createImageMenu(artist), newArray.push(artist.artist))
+          : ''
       }),
     )
 }
 
 function hanldeFilter(arr) {
   return arr.includes(`${input}`)
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/Thomas
+document.querySelectorAll(".album-info").forEach(album => {
+	const albumId = album.dataset.albumId;
+	const ratings = album.querySelectorAll(".like-rating");
+	const likeRating = ratings[0];
+
+	ratings.forEach(rating => {
+		const button = rating.querySelector(".like-countU-button material-icons" , ".like-countD-button material-icons$");
+		const count = rating.querySelector(".like-rating-count");
+        
+        button.addEventListener("click", async () => {
+                if (rating.albumList.contains("like-rating-selected")) {
+                    const count = rating.querySelector(".like-rating-count")
+                    rating.albumList.remove("like-rating-selected")
+                return;
+                }
+                count.textContent = Number(count.textContent) + 1;
+                
+                ratings.forEach(rating => {
+                    if (rating.albumList.contains("like-rating-selected")) {
+                        const countD = rating.querySelector(".like-rating-count");
+                        const countU = rating.querySelector(",like-rating-count")
+
+                        count.textContent = Math.max(0, Number(count.textContent) - 1);
+                        rating.albumList.remove("like-rating-selected");
+                }
+            });
+            rating.albumList.add("like-rating-selected"); 
+
+            const likeOrDislike = likeRating === rating ? "like" : "dislike";
+            const response = await fetch(`/.album-info/${albumId}/${likeOrDislike}`);
+            const body = await response.json();
+        });
+    });
+ });

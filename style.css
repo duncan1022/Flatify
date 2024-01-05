@@ -1,169 +1,5 @@
-<<<<<<< HEAD
 
-* {
-    box-sizing: 0;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-image: linear-gradient(whitesmoke, #0bccf5, black);
-    color: whitesmoke;
-    background-repeat: no-repeat;
-    height: 100%;
-    background-attachment: fixed;
-  }
-  #right-side {
-    margin-left: auto;
-  }
-  
-  #search {
-    display: flex;
-    width: 500px;
-    margin: 30px auto;
-    height: 40px;
-    border: #333 solid;
-    border-radius: 20px;
-  }
-  #search-text {
-    margin-right: 0;
-    border: none;
-    width: 400px;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
-  #search-album {
-    margin-left: 0;
-    border: none;
-    width: 100px;
-    text-align: center;
-    color: #333;
-    cursor: pointer;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: darkgray;
-    font-size: 16px;
-    font-style: bold;
-  }
-  
-  .logo {
-    margin: 20px 0px 20px 0px;
-  }
-  
-  #album-list {
-    display: flex;
-    justify-content: center;
-    overflow-x: scroll;
-    scrollbar-width: 0px;
-  
-    white-space: nowrap;
-  }
-  #album-list::-webkit-scrollbar {
-    display: none;
-  }
-  
-  #album-list:nth-child(1) {
-    margin-left: 20px;
-  }
-  #album-list img {
-    width: 200px;
-    height: auto;
-    margin: 20px;
-    cursor: pointer;
-    border-radius: 0.5rem;
-  }
-  #review-container {
-    width: 400px;
-    margin: auto;
-  }
-  
-  #album-list img:hover {
-    filter: drop-shadow(0 0 0.75rem black);
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
-  
-  #album-info {
-    display: flex;
-    height: 500px;
-    justify-content: center;
-    margin: auto;
-    width: 500px;
-  }
-  
-  #album-info img {
-    height: auto;
-    margin: 7px;
-    filter: drop-shadow(0 0 1em whitesmoke);
-    border-radius: 0.5rem;
-  }
-  
-  #album-details {
-    width: 400px;
-    margin-left: 5px;
-    margin-top: 20px;
-    justify-content: center;
-  }
-  
-  #album-details > h3 {
-    width: 100%;
-  }
-  
-  #reviews-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #reviews-list li {
-    margin-bottom: 10px;
-  }
-  
-  #review-form {
-    margin-top: 10px;
-  }
-  
-  .review-input {
-    padding: 5px;
-    width: 300px;
-    font-size: 16px;
-  }
-  
-  .review-button {
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #0bccf5;
-    color: black;
-    border: none;
-    border-radius: 4px;
-    margin-left: 10px;
-  }
-  
-  .review-button:hover {
-    background-color: #09699b;
-    color: whitesmoke;
-  }
-  
-  .delete-button {
-    background-color: #0bccf5;
-    color: whitesmoke;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  .delete-button:hover {
-    background-color: #09699b;
-    color: whitesmoke;
-  }
-  #footer {
-    color: #0bccf5;
-    float: left;
-    padding: 50px;
-    text-align: center;
-    width: 75%;
-  }
-=======
+
 * {
   box-sizing: 0;
   margin: 0;
@@ -320,11 +156,40 @@ body {
   background-color: #09699b;
   color: whitesmoke;
 }
-#footer {
-  color: #0bccf5;
-  float: left;
-  padding: 50px;
-  text-align: center;
-  width: 75%;
+.like-rating-container {
+  display: flex;
+  justify-content: middle;
+  padding: 12px 0px;
 }
->>>>>>> origin/Thomas
+
+.like-rating {
+  display: flex;
+  align-items:center;
+  cursor: defualt;
+}
+
+
+.like-rating-selected > .like-countU-button,
+.like-rating-selected > .like-rating-count {
+  color: #0abac3;
+}
+
+.like-rating-selected > .like-countD-button,
+.like-rating-selected > .like-rating-count {
+  color: #0abac3;
+}
+
+.like-rating:not(:last-child){
+  margin-right: 12px;
+}
+
+.like-count-button {
+margin-right: 6px;
+cursor: pointer;
+color: #1429c7;
+}
+
+
+.like-rating:not(.like-rating-selected) > .like-count-button:hover {
+  color: #000000
+}
