@@ -6,6 +6,9 @@
 body {
   background-image: linear-gradient(whitesmoke, #0bccf5, black);
   color: whitesmoke;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-attachment: fixed;
 }
 #right-side {
   margin-left: auto;
