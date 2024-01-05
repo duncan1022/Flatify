@@ -27,7 +27,6 @@ body {
   cursor: pointer;
 }
 #review-container {
-  border: #333;
   width: 400px;
   margin: auto;
 }
@@ -42,7 +41,8 @@ body {
   display: flex;
   height: 400px;
   justify-content: center;
-  margin-top: 25px;
+  margin: auto;
+  width: 500px;
 }
 
 #album-info img {
@@ -52,8 +52,10 @@ body {
 }
 
 #album-info div {
-  width: 500px;
-  margin-left: 20px;
+  width: 300px;
+  margin-left: 5px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 #reviews-list {
