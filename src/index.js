@@ -1,5 +1,5 @@
 let currentAlbum
-
+const url = 'http://localhost:3000/albums'
 const albumList = document.querySelector('#album-list')
 const albumImage = document.querySelector('#detail-image')
 const albumTitle = document.querySelector('#title')
@@ -8,7 +8,11 @@ const albumArtist = document.querySelector('#artist')
 
 const reviewsList = document.querySelector('#reviews-list')
 
-fetch('http://localhost:3000/albums')
+const search = document.querySelector('#search')
+const searchText = document.querySelector('#search-text')
+const searchBtn = document.querySelector('#search-album')
+
+fetch(url)
   .then((response) => response.json())
   .then((albumData) => {
     albumData.map((eachAlbum) => {
@@ -32,7 +36,7 @@ function createImageMenu(album) {
 
 const displayAlbumDetail = (album) => {
   currentAlbum = album
-
+  console.log(album.image)
   albumImage.src = album.image
   albumTitle.textContent = album.title
   albumYear.textContent = album.year
@@ -82,4 +86,27 @@ function makeNewReview() {
 
 function addNewReview(newReview) {
   reviewsList.appendChild(newReview)
+}
+
+searchText.addEventListener('input', (e) => handleInput(e))
+
+search.addEventListener('submit', (e) => hanldeSearch(e))
+let input = ''
+function handleInput(e) {
+  input = e.target.value
+}
+function hanldeSearch(e) {
+  e.preventDefault()
+  albumList.innerHTML = ''
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) =>
+      data.forEach((artist) => {
+        hanldeFilter(artist.artist) ? createImageMenu(artist) : ''
+      }),
+    )
+}
+
+function hanldeFilter(arr) {
+  return arr.includes(`${input}`)
 }
