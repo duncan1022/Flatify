@@ -54,7 +54,7 @@
     overflow-x: scroll;
     scrollbar-width: 0px;
   
-    white-space: nowrap;
+    white-space: nowrap; /*Scroll*/
   }
   #album-list::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
